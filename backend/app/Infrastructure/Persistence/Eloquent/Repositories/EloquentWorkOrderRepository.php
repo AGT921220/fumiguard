@@ -56,6 +56,14 @@ final class EloquentWorkOrderRepository extends TenantScopedRepository implement
         return $this->toArray($wo);
     }
 
+    public function countCreatedBetween(string $start, string $end): int
+    {
+        return (int) WorkOrder::query()
+            ->where('tenant_id', $this->tenantId())
+            ->whereBetween('created_at', [$start, $end])
+            ->count();
+    }
+
     private function toArray(WorkOrder $wo): array
     {
         return [

@@ -77,6 +77,9 @@
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-login">
                                 <a href="#endpoints-POSTapi-v1-login">POST api/v1/login</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-billing-webhook">
+                                <a href="#endpoints-POSTapi-v1-billing-webhook">POST api/v1/billing/webhook</a>
+                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-logout">
                                 <a href="#endpoints-POSTapi-v1-logout">POST api/v1/logout</a>
                             </li>
@@ -85,6 +88,15 @@
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-tenant">
                                 <a href="#endpoints-GETapi-v1-tenant">GET api/v1/tenant</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-billing-checkout">
+                                <a href="#endpoints-POSTapi-v1-billing-checkout">POST api/v1/billing/checkout</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-billing-portal">
+                                <a href="#endpoints-POSTapi-v1-billing-portal">POST api/v1/billing/portal</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-users-technicians">
+                                <a href="#endpoints-POSTapi-v1-users-technicians">POST api/v1/users/technicians</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-customers">
                                 <a href="#endpoints-GETapi-v1-customers">GET api/v1/customers</a>
@@ -265,13 +277,13 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-x-trace-id: f95cdc38-dc81-43af-9beb-e904749b0bea
+x-trace-id: 5507463f-0778-4fd8-923b-875e571ae386
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;status&quot;: &quot;ok&quot;,
     &quot;service&quot;: &quot;backend&quot;,
-    &quot;timestamp&quot;: &quot;2026-01-09T10:08:59.493225Z&quot;
+    &quot;timestamp&quot;: &quot;2026-01-09T10:24:32.563322Z&quot;
 }</code>
  </pre>
     </span>
@@ -494,6 +506,116 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </div>
         </form>
 
+                    <h2 id="endpoints-POSTapi-v1-billing-webhook">POST api/v1/billing/webhook</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-billing-webhook">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/v1/billing/webhook" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/billing/webhook"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-billing-webhook">
+</span>
+<span id="execution-results-POSTapi-v1-billing-webhook" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-billing-webhook"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-billing-webhook"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-billing-webhook" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-billing-webhook">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-billing-webhook" data-method="POST"
+      data-path="api/v1/billing/webhook"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-billing-webhook', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-billing-webhook"
+                    onclick="tryItOut('POSTapi-v1-billing-webhook');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-billing-webhook"
+                    onclick="cancelTryOut('POSTapi-v1-billing-webhook');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-billing-webhook"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/billing/webhook</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-billing-webhook"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-billing-webhook"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
                     <h2 id="endpoints-POSTapi-v1-logout">POST api/v1/logout</h2>
 
 <p>
@@ -650,13 +772,13 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-x-trace-id: e92c767f-b2c7-42b9-b520-a759b61689e8
+x-trace-id: 9f43e2c9-8ad2-4b68-bd31-b239e2aebff0
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;message&quot;: &quot;Error interno.&quot;,
     &quot;errors&quot;: {},
-    &quot;trace_id&quot;: &quot;e92c767f-b2c7-42b9-b520-a759b61689e8&quot;
+    &quot;trace_id&quot;: &quot;9f43e2c9-8ad2-4b68-bd31-b239e2aebff0&quot;
 }</code>
  </pre>
     </span>
@@ -779,13 +901,13 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-x-trace-id: 4677edbe-5499-4ba1-aa8b-23b6a6a79375
+x-trace-id: 0a2fb254-d2bf-49c2-b63a-9cb14bb9651a
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;message&quot;: &quot;Error interno.&quot;,
     &quot;errors&quot;: {},
-    &quot;trace_id&quot;: &quot;4677edbe-5499-4ba1-aa8b-23b6a6a79375&quot;
+    &quot;trace_id&quot;: &quot;0a2fb254-d2bf-49c2-b63a-9cb14bb9651a&quot;
 }</code>
  </pre>
     </span>
@@ -862,6 +984,410 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
+                    <h2 id="endpoints-POSTapi-v1-billing-checkout">POST api/v1/billing/checkout</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-billing-checkout">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/v1/billing/checkout" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"plan_key\": \"ENTERPRISE\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/billing/checkout"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "plan_key": "ENTERPRISE"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-billing-checkout">
+</span>
+<span id="execution-results-POSTapi-v1-billing-checkout" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-billing-checkout"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-billing-checkout"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-billing-checkout" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-billing-checkout">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-billing-checkout" data-method="POST"
+      data-path="api/v1/billing/checkout"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-billing-checkout', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-billing-checkout"
+                    onclick="tryItOut('POSTapi-v1-billing-checkout');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-billing-checkout"
+                    onclick="cancelTryOut('POSTapi-v1-billing-checkout');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-billing-checkout"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/billing/checkout</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-billing-checkout"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-billing-checkout"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>plan_key</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="plan_key"                data-endpoint="POSTapi-v1-billing-checkout"
+               value="ENTERPRISE"
+               data-component="body">
+    <br>
+<p>Example: <code>ENTERPRISE</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>BASIC</code></li> <li><code>PRO</code></li> <li><code>ENTERPRISE</code></li></ul>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-POSTapi-v1-billing-portal">POST api/v1/billing/portal</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-billing-portal">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/v1/billing/portal" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/billing/portal"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-billing-portal">
+</span>
+<span id="execution-results-POSTapi-v1-billing-portal" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-billing-portal"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-billing-portal"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-billing-portal" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-billing-portal">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-billing-portal" data-method="POST"
+      data-path="api/v1/billing/portal"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-billing-portal', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-billing-portal"
+                    onclick="tryItOut('POSTapi-v1-billing-portal');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-billing-portal"
+                    onclick="cancelTryOut('POSTapi-v1-billing-portal');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-billing-portal"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/billing/portal</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-billing-portal"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-billing-portal"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="endpoints-POSTapi-v1-users-technicians">POST api/v1/users/technicians</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-users-technicians">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/v1/users/technicians" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"name\": \"b\",
+    \"email\": \"zbailey@example.net\",
+    \"password\": \"-0pBNvYgxw\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/users/technicians"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "b",
+    "email": "zbailey@example.net",
+    "password": "-0pBNvYgxw"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-users-technicians">
+</span>
+<span id="execution-results-POSTapi-v1-users-technicians" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-users-technicians"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-users-technicians"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-users-technicians" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-users-technicians">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-users-technicians" data-method="POST"
+      data-path="api/v1/users/technicians"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-users-technicians', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-users-technicians"
+                    onclick="tryItOut('POSTapi-v1-users-technicians');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-users-technicians"
+                    onclick="cancelTryOut('POSTapi-v1-users-technicians');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-users-technicians"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/users/technicians</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-users-technicians"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-users-technicians"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="POSTapi-v1-users-technicians"
+               value="b"
+               data-component="body">
+    <br>
+<p>Must not be greater than 255 characters. Example: <code>b</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="POSTapi-v1-users-technicians"
+               value="zbailey@example.net"
+               data-component="body">
+    <br>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>zbailey@example.net</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="password"                data-endpoint="POSTapi-v1-users-technicians"
+               value="-0pBNvYgxw"
+               data-component="body">
+    <br>
+<p>Must be at least 8 characters. Example: <code>-0pBNvYgxw</code></p>
+        </div>
+        </form>
+
                     <h2 id="endpoints-GETapi-v1-customers">GET api/v1/customers</h2>
 
 <p>
@@ -908,13 +1434,13 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-x-trace-id: 1893d68c-41b1-44eb-9845-290f065f0c0b
+x-trace-id: 15433395-325e-4911-9016-76f2a7b6ef43
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;message&quot;: &quot;Error interno.&quot;,
     &quot;errors&quot;: {},
-    &quot;trace_id&quot;: &quot;1893d68c-41b1-44eb-9845-290f065f0c0b&quot;
+    &quot;trace_id&quot;: &quot;15433395-325e-4911-9016-76f2a7b6ef43&quot;
 }</code>
  </pre>
     </span>
@@ -1211,13 +1737,13 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-x-trace-id: 651ee294-ba4c-41f9-aded-0ccfd8d73f33
+x-trace-id: f3cfc70b-a5e0-4fdb-8c74-82fe57a4551b
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;message&quot;: &quot;Error interno.&quot;,
     &quot;errors&quot;: {},
-    &quot;trace_id&quot;: &quot;651ee294-ba4c-41f9-aded-0ccfd8d73f33&quot;
+    &quot;trace_id&quot;: &quot;f3cfc70b-a5e0-4fdb-8c74-82fe57a4551b&quot;
 }</code>
  </pre>
     </span>
@@ -1850,13 +2376,13 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-x-trace-id: 7e2fff3c-6ad6-4510-8fdb-50a6e7c542c9
+x-trace-id: 15291775-be69-4de5-8b47-79dcb41e37c5
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;message&quot;: &quot;Error interno.&quot;,
     &quot;errors&quot;: {},
-    &quot;trace_id&quot;: &quot;7e2fff3c-6ad6-4510-8fdb-50a6e7c542c9&quot;
+    &quot;trace_id&quot;: &quot;15291775-be69-4de5-8b47-79dcb41e37c5&quot;
 }</code>
  </pre>
     </span>
@@ -2264,13 +2790,13 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-x-trace-id: 68248f9c-ce5c-4c28-87fd-dce0f4ac4523
+x-trace-id: 9eccfd82-48cd-4d2c-a209-b57d4b54e2e8
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;message&quot;: &quot;Error interno.&quot;,
     &quot;errors&quot;: {},
-    &quot;trace_id&quot;: &quot;68248f9c-ce5c-4c28-87fd-dce0f4ac4523&quot;
+    &quot;trace_id&quot;: &quot;9eccfd82-48cd-4d2c-a209-b57d4b54e2e8&quot;
 }</code>
  </pre>
     </span>
@@ -3071,13 +3597,13 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-x-trace-id: f7b1989b-5220-4d5e-9ac8-11943df0d2fc
+x-trace-id: 1ddd46d1-e93c-46f8-bcb3-ed352b1d8906
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;message&quot;: &quot;Error interno.&quot;,
     &quot;errors&quot;: {},
-    &quot;trace_id&quot;: &quot;f7b1989b-5220-4d5e-9ac8-11943df0d2fc&quot;
+    &quot;trace_id&quot;: &quot;1ddd46d1-e93c-46f8-bcb3-ed352b1d8906&quot;
 }</code>
  </pre>
     </span>
@@ -3380,13 +3906,13 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-x-trace-id: 790d1d16-8940-42c8-a8f3-b106cdf3e7c8
+x-trace-id: 266b6637-b9b4-4b7e-b7f5-10284ac19f67
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;message&quot;: &quot;Error interno.&quot;,
     &quot;errors&quot;: {},
-    &quot;trace_id&quot;: &quot;790d1d16-8940-42c8-a8f3-b106cdf3e7c8&quot;
+    &quot;trace_id&quot;: &quot;266b6637-b9b4-4b7e-b7f5-10284ac19f67&quot;
 }</code>
  </pre>
     </span>
@@ -4005,7 +4531,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"frequency\": \"architecto\",
     \"day_of_month\": 22,
     \"interval_months\": 7,
-    \"starts_on\": \"2026-01-09T10:08:59\"
+    \"starts_on\": \"2026-01-09T10:24:32\"
 }"
 </code></pre></div>
 
@@ -4024,7 +4550,7 @@ let body = {
     "frequency": "architecto",
     "day_of_month": 22,
     "interval_months": 7,
-    "starts_on": "2026-01-09T10:08:59"
+    "starts_on": "2026-01-09T10:24:32"
 };
 
 fetch(url, {
@@ -4152,10 +4678,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="starts_on"                data-endpoint="POSTapi-v1-recurrences"
-               value="2026-01-09T10:08:59"
+               value="2026-01-09T10:24:32"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-01-09T10:08:59</code></p>
+<p>Must be a valid date. Example: <code>2026-01-09T10:24:32</code></p>
         </div>
         </form>
 
@@ -4180,7 +4706,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"site_id\": 16,
     \"service_plan_id\": 16,
     \"recurrence_rule_id\": 16,
-    \"scheduled_at\": \"2026-01-09T10:08:59\",
+    \"scheduled_at\": \"2026-01-09T10:24:32\",
     \"status\": \"architecto\",
     \"notes\": \"architecto\"
 }"
@@ -4202,7 +4728,7 @@ let body = {
     "site_id": 16,
     "service_plan_id": 16,
     "recurrence_rule_id": 16,
-    "scheduled_at": "2026-01-09T10:08:59",
+    "scheduled_at": "2026-01-09T10:24:32",
     "status": "architecto",
     "notes": "architecto"
 };
@@ -4344,10 +4870,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="scheduled_at"                data-endpoint="POSTapi-v1-appointments"
-               value="2026-01-09T10:08:59"
+               value="2026-01-09T10:24:32"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-01-09T10:08:59</code></p>
+<p>Must be a valid date. Example: <code>2026-01-09T10:24:32</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -4393,7 +4919,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Accept: application/json" \
     --data "{
     \"view\": \"week\",
-    \"date\": \"2026-01-09T10:08:59\"
+    \"date\": \"2026-01-09T10:24:32\"
 }"
 </code></pre></div>
 
@@ -4410,7 +4936,7 @@ const headers = {
 
 let body = {
     "view": "week",
-    "date": "2026-01-09T10:08:59"
+    "date": "2026-01-09T10:24:32"
 };
 
 fetch(url, {
@@ -4432,13 +4958,13 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-x-trace-id: 5ecd6270-a11b-4e82-bc75-c45e28406ea6
+x-trace-id: ade83837-684f-4fa8-99d9-2bc25a903985
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;message&quot;: &quot;Error interno.&quot;,
     &quot;errors&quot;: {},
-    &quot;trace_id&quot;: &quot;5ecd6270-a11b-4e82-bc75-c45e28406ea6&quot;
+    &quot;trace_id&quot;: &quot;ade83837-684f-4fa8-99d9-2bc25a903985&quot;
 }</code>
  </pre>
     </span>
@@ -4535,10 +5061,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="GETapi-v1-agenda"
-               value="2026-01-09T10:08:59"
+               value="2026-01-09T10:24:32"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-01-09T10:08:59</code></p>
+<p>Must be a valid date. Example: <code>2026-01-09T10:24:32</code></p>
         </div>
         </form>
 
@@ -4829,7 +5355,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --data "{
     \"lat\": 4326.41688,
     \"lng\": 4326.41688,
-    \"at\": \"2026-01-09T10:08:59\"
+    \"at\": \"2026-01-09T10:24:32\"
 }"
 </code></pre></div>
 
@@ -4847,7 +5373,7 @@ const headers = {
 let body = {
     "lat": 4326.41688,
     "lng": 4326.41688,
-    "at": "2026-01-09T10:08:59"
+    "at": "2026-01-09T10:24:32"
 };
 
 fetch(url, {
@@ -4976,10 +5502,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="at"                data-endpoint="POSTapi-v1-work-orders--id--check-in"
-               value="2026-01-09T10:08:59"
+               value="2026-01-09T10:24:32"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-01-09T10:08:59</code></p>
+<p>Must be a valid date. Example: <code>2026-01-09T10:24:32</code></p>
         </div>
         </form>
 
@@ -5002,7 +5528,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --data "{
     \"lat\": 4326.41688,
     \"lng\": 4326.41688,
-    \"at\": \"2026-01-09T10:08:59\"
+    \"at\": \"2026-01-09T10:24:32\"
 }"
 </code></pre></div>
 
@@ -5020,7 +5546,7 @@ const headers = {
 let body = {
     "lat": 4326.41688,
     "lng": 4326.41688,
-    "at": "2026-01-09T10:08:59"
+    "at": "2026-01-09T10:24:32"
 };
 
 fetch(url, {
@@ -5149,10 +5675,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="at"                data-endpoint="POSTapi-v1-work-orders--id--check-out"
-               value="2026-01-09T10:08:59"
+               value="2026-01-09T10:24:32"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-01-09T10:08:59</code></p>
+<p>Must be a valid date. Example: <code>2026-01-09T10:24:32</code></p>
         </div>
         </form>
 
@@ -5627,7 +6153,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost/api/v1/work-orders/architecto/report/evidence" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "file=@/tmp/phpohBFoL" </code></pre></div>
+    --form "file=@/tmp/phpuui9Ga" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -5748,7 +6274,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be a file. Must not be greater than 10240 kilobytes. Example: <code>/tmp/phpohBFoL</code></p>
+<p>Must be a file. Must not be greater than 10240 kilobytes. Example: <code>/tmp/phpuui9Ga</code></p>
         </div>
         </form>
 
@@ -5772,7 +6298,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"signed_by_name\": \"b\",
     \"signed_by_role\": \"n\",
     \"signature_data\": \"architecto\",
-    \"signed_at\": \"2026-01-09T10:08:59\"
+    \"signed_at\": \"2026-01-09T10:24:32\"
 }"
 </code></pre></div>
 
@@ -5791,7 +6317,7 @@ let body = {
     "signed_by_name": "b",
     "signed_by_role": "n",
     "signature_data": "architecto",
-    "signed_at": "2026-01-09T10:08:59"
+    "signed_at": "2026-01-09T10:24:32"
 };
 
 fetch(url, {
@@ -5932,10 +6458,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="signed_at"                data-endpoint="POSTapi-v1-work-orders--workOrderId--report-signature"
-               value="2026-01-09T10:08:59"
+               value="2026-01-09T10:24:32"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-01-09T10:08:59</code></p>
+<p>Must be a valid date. Example: <code>2026-01-09T10:24:32</code></p>
         </div>
         </form>
 
@@ -6108,13 +6634,13 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-x-trace-id: 3bd08213-cac6-406d-82de-0f32ed524f8a
+x-trace-id: 828e884b-4f7a-4638-aee7-b34b195731af
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;message&quot;: &quot;Error interno.&quot;,
     &quot;errors&quot;: {},
-    &quot;trace_id&quot;: &quot;3bd08213-cac6-406d-82de-0f32ed524f8a&quot;
+    &quot;trace_id&quot;: &quot;828e884b-4f7a-4638-aee7-b34b195731af&quot;
 }</code>
  </pre>
     </span>
@@ -6250,13 +6776,13 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-x-trace-id: b07f6d95-5c5e-4e45-8dfe-d7da357753a2
+x-trace-id: 43e32de6-b782-4108-929d-cd2b279843a3
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;message&quot;: &quot;Error interno.&quot;,
     &quot;errors&quot;: {},
-    &quot;trace_id&quot;: &quot;b07f6d95-5c5e-4e45-8dfe-d7da357753a2&quot;
+    &quot;trace_id&quot;: &quot;43e32de6-b782-4108-929d-cd2b279843a3&quot;
 }</code>
  </pre>
     </span>

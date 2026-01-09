@@ -23,5 +23,7 @@ interface WorkOrderRepository
      * @return array{id:int,appointment_id:int,assigned_user_id:?int,status:string,check_in_at:?string,check_out_at:?string}|null
      */
     public function update(int $id, array $data): ?array;
+
+    public function countCreatedBetween(string $start, string $end): int;
 }
 

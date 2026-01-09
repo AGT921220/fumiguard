@@ -23,6 +23,7 @@ return Application::configure(basePath: dirname(__DIR__))
 
         $middleware->alias([
             'tenant' => \App\Http\Middleware\SetTenantFromAuthenticatedUser::class,
+            'sub_active' => \App\Http\Middleware\EnforceSubscriptionReadOnly::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

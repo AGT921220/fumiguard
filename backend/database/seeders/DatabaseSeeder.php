@@ -8,6 +8,7 @@ use App\Infrastructure\Persistence\Eloquent\Models\Customer;
 use App\Infrastructure\Persistence\Eloquent\Models\Site;
 use App\Infrastructure\Persistence\Eloquent\Models\ServicePlan;
 use App\Infrastructure\Persistence\Eloquent\Models\Appointment;
+use App\Infrastructure\Persistence\Eloquent\Models\Subscription;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -74,5 +75,19 @@ class DatabaseSeeder extends Seeder
             'scheduled_at' => now()->addDay(),
             'status' => 'SCHEDULED',
         ]);
+
+        // Dev/test-friendly default subscription state.
+        // Stripe is source of truth in prod; here we seed "trialing" to keep the app writable locally.
+        Subscription::query()->updateOrCreate(
+            ['tenant_id' => $tenant->id],
+            [
+                'plan_key' => 'BASIC',
+                'status' => 'trialing',
+                'stripe_customer_id' => null,
+                'stripe_subscription_id' => null,
+                'current_period_end' => now()->addDays(14),
+                'limits_json' => ['max_technicians' => 3, 'max_work_orders_per_month' => 100],
+            ]
+        );
     }
 }

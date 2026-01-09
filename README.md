@@ -86,3 +86,35 @@ Al correr `php artisan migrate --seed` se crea:
   - `admin@demo.test` / `password` (TENANT_ADMIN)
   - `dispatcher@demo.test` / `password` (DISPATCHER)
 
+### Stripe Billing (suscripciones por tenant)
+
+Endpoints:
+
+- `POST /api/v1/billing/checkout` (auth): crea Checkout Session para suscripción mensual
+- `POST /api/v1/billing/portal` (auth): abre Billing Portal (opcional)
+- `POST /api/v1/billing/webhook` (public): sincroniza estado desde Stripe (fuente de verdad)
+
+Reglas:
+
+- Si la suscripción está **inactiva** (`status` distinto de `active|trialing`) el API queda en **solo lectura** para endpoints mutables.
+- Límites por plan se aplican al:
+  - crear técnicos: `POST /api/v1/users/technicians`
+  - crear órdenes: al generar work order desde appointment
+
+Variables necesarias (modo test):
+
+- `STRIPE_SECRET_KEY`
+- `STRIPE_WEBHOOK_SECRET`
+- `STRIPE_PRICE_BASIC`, `STRIPE_PRICE_PRO`, `STRIPE_PRICE_ENTERPRISE`
+- `STRIPE_CHECKOUT_SUCCESS_URL`, `STRIPE_CHECKOUT_CANCEL_URL`, `STRIPE_PORTAL_RETURN_URL`
+
+Guía rápida (test mode):
+
+1) Crea productos y **Prices** mensuales en Stripe y copia sus Price IDs a `.env`.
+2) Configura el webhook en Stripe apuntando a `POST /api/v1/billing/webhook` y habilita eventos:
+   - `checkout.session.completed`
+   - `customer.subscription.updated`
+   - `customer.subscription.deleted`
+   - `invoice.payment_failed`
+3) Para pagar en test mode usa una tarjeta de prueba (por ejemplo `4242 4242 4242 4242`).
+

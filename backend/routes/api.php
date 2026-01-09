@@ -4,11 +4,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\TenantController;
 use App\Http\Controllers\Api\V1\CustomerController;
+use App\Http\Controllers\Api\V1\BillingController;
 use App\Http\Controllers\Api\V1\ReportDocumentController;
 use App\Http\Controllers\Api\V1\SchedulingController;
 use App\Http\Controllers\Api\V1\ServicePlanController;
 use App\Http\Controllers\Api\V1\ServiceReportController;
 use App\Http\Controllers\Api\V1\SiteController;
+use App\Http\Controllers\Api\V1\StripeWebhookController;
+use App\Http\Controllers\Api\V1\UserController;
 use App\Http\Controllers\Api\V1\WorkOrderController;
 
 Route::prefix('v1')->group(function () {
@@ -22,11 +25,24 @@ Route::prefix('v1')->group(function () {
 
     Route::post('/login', [AuthController::class, 'login']);
 
+    // Stripe webhooks (no auth)
+    Route::post('/billing/webhook', [StripeWebhookController::class, 'handle']);
+
     Route::middleware(['auth:sanctum', 'tenant'])->group(function () {
         Route::post('/logout', [AuthController::class, 'logout']);
         Route::get('/me', [AuthController::class, 'me']);
 
         Route::get('/tenant', [TenantController::class, 'current']);
+
+        // Billing (allowed even if subscription is inactive)
+        Route::post('/billing/checkout', [BillingController::class, 'checkout']);
+        Route::post('/billing/portal', [BillingController::class, 'portal']);
+    });
+
+    // Everything below is subscription-gated (read-only if inactive).
+    Route::middleware(['auth:sanctum', 'tenant', 'sub_active'])->group(function () {
+        // Users
+        Route::post('/users/technicians', [UserController::class, 'createTechnician']);
 
         // Customers
         Route::get('/customers', [CustomerController::class, 'index']);
