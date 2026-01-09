@@ -53,3 +53,25 @@ Por defecto Vite levanta en `http://localhost:5173`.
   - `backend/app/Application`
   - `backend/app/Infrastructure`
 
+### OpenAPI / Swagger
+
+El backend genera documentación OpenAPI con **Scribe**:
+
+- **UI**: `http://localhost/docs`
+- **OpenAPI YAML**: `backend/storage/app/private/scribe/openapi.yaml`
+- **Regenerar**:
+
+```bash
+cd backend
+php artisan scribe:generate
+```
+
+### Datos demo (seed)
+
+Al correr `php artisan migrate --seed` se crea:
+
+- 1 tenant: `fumiguard-demo`
+- Usuarios:
+  - `admin@demo.test` / `password` (TENANT_ADMIN)
+  - `dispatcher@demo.test` / `password` (DISPATCHER)
+
