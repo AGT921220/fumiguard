@@ -179,6 +179,12 @@
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-work-orders--workOrderId--report-finalize">
                                 <a href="#endpoints-POSTapi-v1-work-orders--workOrderId--report-finalize">POST api/v1/work-orders/{workOrderId}/report/finalize</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-reports--id--pdf">
+                                <a href="#endpoints-GETapi-v1-reports--id--pdf">GET api/v1/reports/{id}/pdf</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-reports--id--certificate">
+                                <a href="#endpoints-GETapi-v1-reports--id--certificate">GET api/v1/reports/{id}/certificate</a>
+                            </li>
                                                                         </ul>
                             </ul>
             </div>
@@ -259,13 +265,13 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-x-trace-id: da4c6370-fc08-4bdd-bc6c-5298a1d2a41b
+x-trace-id: f95cdc38-dc81-43af-9beb-e904749b0bea
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;status&quot;: &quot;ok&quot;,
     &quot;service&quot;: &quot;backend&quot;,
-    &quot;timestamp&quot;: &quot;2026-01-09T09:54:48.557975Z&quot;
+    &quot;timestamp&quot;: &quot;2026-01-09T10:08:59.493225Z&quot;
 }</code>
  </pre>
     </span>
@@ -644,13 +650,13 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-x-trace-id: 3a09310f-0b20-465f-86e8-62a1bc087105
+x-trace-id: e92c767f-b2c7-42b9-b520-a759b61689e8
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;message&quot;: &quot;Error interno.&quot;,
     &quot;errors&quot;: {},
-    &quot;trace_id&quot;: &quot;3a09310f-0b20-465f-86e8-62a1bc087105&quot;
+    &quot;trace_id&quot;: &quot;e92c767f-b2c7-42b9-b520-a759b61689e8&quot;
 }</code>
  </pre>
     </span>
@@ -773,13 +779,13 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-x-trace-id: 7601f977-af02-4530-9073-374e131db4f1
+x-trace-id: 4677edbe-5499-4ba1-aa8b-23b6a6a79375
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;message&quot;: &quot;Error interno.&quot;,
     &quot;errors&quot;: {},
-    &quot;trace_id&quot;: &quot;7601f977-af02-4530-9073-374e131db4f1&quot;
+    &quot;trace_id&quot;: &quot;4677edbe-5499-4ba1-aa8b-23b6a6a79375&quot;
 }</code>
  </pre>
     </span>
@@ -902,13 +908,13 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-x-trace-id: 0063bff6-e1b8-4363-91de-b3169dbfd714
+x-trace-id: 1893d68c-41b1-44eb-9845-290f065f0c0b
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;message&quot;: &quot;Error interno.&quot;,
     &quot;errors&quot;: {},
-    &quot;trace_id&quot;: &quot;0063bff6-e1b8-4363-91de-b3169dbfd714&quot;
+    &quot;trace_id&quot;: &quot;1893d68c-41b1-44eb-9845-290f065f0c0b&quot;
 }</code>
  </pre>
     </span>
@@ -1205,13 +1211,13 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-x-trace-id: 114e4026-c607-4b51-b1f6-c87e523998b4
+x-trace-id: 651ee294-ba4c-41f9-aded-0ccfd8d73f33
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;message&quot;: &quot;Error interno.&quot;,
     &quot;errors&quot;: {},
-    &quot;trace_id&quot;: &quot;114e4026-c607-4b51-b1f6-c87e523998b4&quot;
+    &quot;trace_id&quot;: &quot;651ee294-ba4c-41f9-aded-0ccfd8d73f33&quot;
 }</code>
  </pre>
     </span>
@@ -1844,13 +1850,13 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-x-trace-id: 025c0131-8cda-46d4-87cb-2c1e677c07d4
+x-trace-id: 7e2fff3c-6ad6-4510-8fdb-50a6e7c542c9
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;message&quot;: &quot;Error interno.&quot;,
     &quot;errors&quot;: {},
-    &quot;trace_id&quot;: &quot;025c0131-8cda-46d4-87cb-2c1e677c07d4&quot;
+    &quot;trace_id&quot;: &quot;7e2fff3c-6ad6-4510-8fdb-50a6e7c542c9&quot;
 }</code>
  </pre>
     </span>
@@ -2258,13 +2264,13 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-x-trace-id: b48d7a21-8fa0-4d19-86c0-b73a0d78f0e4
+x-trace-id: 68248f9c-ce5c-4c28-87fd-dce0f4ac4523
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;message&quot;: &quot;Error interno.&quot;,
     &quot;errors&quot;: {},
-    &quot;trace_id&quot;: &quot;b48d7a21-8fa0-4d19-86c0-b73a0d78f0e4&quot;
+    &quot;trace_id&quot;: &quot;68248f9c-ce5c-4c28-87fd-dce0f4ac4523&quot;
 }</code>
  </pre>
     </span>
@@ -3065,13 +3071,13 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-x-trace-id: 916d8b35-3023-4671-9e3b-a867fa5f8edd
+x-trace-id: f7b1989b-5220-4d5e-9ac8-11943df0d2fc
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;message&quot;: &quot;Error interno.&quot;,
     &quot;errors&quot;: {},
-    &quot;trace_id&quot;: &quot;916d8b35-3023-4671-9e3b-a867fa5f8edd&quot;
+    &quot;trace_id&quot;: &quot;f7b1989b-5220-4d5e-9ac8-11943df0d2fc&quot;
 }</code>
  </pre>
     </span>
@@ -3374,13 +3380,13 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-x-trace-id: 03cbd86a-c6f8-487b-a2fc-b4e4885d4476
+x-trace-id: 790d1d16-8940-42c8-a8f3-b106cdf3e7c8
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;message&quot;: &quot;Error interno.&quot;,
     &quot;errors&quot;: {},
-    &quot;trace_id&quot;: &quot;03cbd86a-c6f8-487b-a2fc-b4e4885d4476&quot;
+    &quot;trace_id&quot;: &quot;790d1d16-8940-42c8-a8f3-b106cdf3e7c8&quot;
 }</code>
  </pre>
     </span>
@@ -3488,7 +3494,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Accept: application/json" \
     --data "{
     \"name\": \"b\",
-    \"is_active\": false
+    \"is_active\": true
 }"
 </code></pre></div>
 
@@ -3505,7 +3511,7 @@ const headers = {
 
 let body = {
     "name": "b",
-    "is_active": false
+    "is_active": true
 };
 
 fetch(url, {
@@ -3659,7 +3665,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>false</code></p>
+<p>Example: <code>true</code></p>
         </div>
         </form>
 
@@ -3999,7 +4005,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"frequency\": \"architecto\",
     \"day_of_month\": 22,
     \"interval_months\": 7,
-    \"starts_on\": \"2026-01-09T09:54:48\"
+    \"starts_on\": \"2026-01-09T10:08:59\"
 }"
 </code></pre></div>
 
@@ -4018,7 +4024,7 @@ let body = {
     "frequency": "architecto",
     "day_of_month": 22,
     "interval_months": 7,
-    "starts_on": "2026-01-09T09:54:48"
+    "starts_on": "2026-01-09T10:08:59"
 };
 
 fetch(url, {
@@ -4146,10 +4152,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="starts_on"                data-endpoint="POSTapi-v1-recurrences"
-               value="2026-01-09T09:54:48"
+               value="2026-01-09T10:08:59"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-01-09T09:54:48</code></p>
+<p>Must be a valid date. Example: <code>2026-01-09T10:08:59</code></p>
         </div>
         </form>
 
@@ -4174,7 +4180,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"site_id\": 16,
     \"service_plan_id\": 16,
     \"recurrence_rule_id\": 16,
-    \"scheduled_at\": \"2026-01-09T09:54:48\",
+    \"scheduled_at\": \"2026-01-09T10:08:59\",
     \"status\": \"architecto\",
     \"notes\": \"architecto\"
 }"
@@ -4196,7 +4202,7 @@ let body = {
     "site_id": 16,
     "service_plan_id": 16,
     "recurrence_rule_id": 16,
-    "scheduled_at": "2026-01-09T09:54:48",
+    "scheduled_at": "2026-01-09T10:08:59",
     "status": "architecto",
     "notes": "architecto"
 };
@@ -4338,10 +4344,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="scheduled_at"                data-endpoint="POSTapi-v1-appointments"
-               value="2026-01-09T09:54:48"
+               value="2026-01-09T10:08:59"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-01-09T09:54:48</code></p>
+<p>Must be a valid date. Example: <code>2026-01-09T10:08:59</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -4387,7 +4393,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Accept: application/json" \
     --data "{
     \"view\": \"week\",
-    \"date\": \"2026-01-09T09:54:48\"
+    \"date\": \"2026-01-09T10:08:59\"
 }"
 </code></pre></div>
 
@@ -4404,7 +4410,7 @@ const headers = {
 
 let body = {
     "view": "week",
-    "date": "2026-01-09T09:54:48"
+    "date": "2026-01-09T10:08:59"
 };
 
 fetch(url, {
@@ -4426,13 +4432,13 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-x-trace-id: a3f85d39-11e6-49b5-8d20-ccaf0c5f582c
+x-trace-id: 5ecd6270-a11b-4e82-bc75-c45e28406ea6
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;message&quot;: &quot;Error interno.&quot;,
     &quot;errors&quot;: {},
-    &quot;trace_id&quot;: &quot;a3f85d39-11e6-49b5-8d20-ccaf0c5f582c&quot;
+    &quot;trace_id&quot;: &quot;5ecd6270-a11b-4e82-bc75-c45e28406ea6&quot;
 }</code>
  </pre>
     </span>
@@ -4529,10 +4535,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="GETapi-v1-agenda"
-               value="2026-01-09T09:54:48"
+               value="2026-01-09T10:08:59"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-01-09T09:54:48</code></p>
+<p>Must be a valid date. Example: <code>2026-01-09T10:08:59</code></p>
         </div>
         </form>
 
@@ -4823,7 +4829,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --data "{
     \"lat\": 4326.41688,
     \"lng\": 4326.41688,
-    \"at\": \"2026-01-09T09:54:48\"
+    \"at\": \"2026-01-09T10:08:59\"
 }"
 </code></pre></div>
 
@@ -4841,7 +4847,7 @@ const headers = {
 let body = {
     "lat": 4326.41688,
     "lng": 4326.41688,
-    "at": "2026-01-09T09:54:48"
+    "at": "2026-01-09T10:08:59"
 };
 
 fetch(url, {
@@ -4970,10 +4976,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="at"                data-endpoint="POSTapi-v1-work-orders--id--check-in"
-               value="2026-01-09T09:54:48"
+               value="2026-01-09T10:08:59"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-01-09T09:54:48</code></p>
+<p>Must be a valid date. Example: <code>2026-01-09T10:08:59</code></p>
         </div>
         </form>
 
@@ -4996,7 +5002,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --data "{
     \"lat\": 4326.41688,
     \"lng\": 4326.41688,
-    \"at\": \"2026-01-09T09:54:48\"
+    \"at\": \"2026-01-09T10:08:59\"
 }"
 </code></pre></div>
 
@@ -5014,7 +5020,7 @@ const headers = {
 let body = {
     "lat": 4326.41688,
     "lng": 4326.41688,
-    "at": "2026-01-09T09:54:48"
+    "at": "2026-01-09T10:08:59"
 };
 
 fetch(url, {
@@ -5143,10 +5149,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="at"                data-endpoint="POSTapi-v1-work-orders--id--check-out"
-               value="2026-01-09T09:54:48"
+               value="2026-01-09T10:08:59"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-01-09T09:54:48</code></p>
+<p>Must be a valid date. Example: <code>2026-01-09T10:08:59</code></p>
         </div>
         </form>
 
@@ -5621,7 +5627,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost/api/v1/work-orders/architecto/report/evidence" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "file=@/tmp/php4ADr22" </code></pre></div>
+    --form "file=@/tmp/phpohBFoL" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -5742,7 +5748,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be a file. Must not be greater than 10240 kilobytes. Example: <code>/tmp/php4ADr22</code></p>
+<p>Must be a file. Must not be greater than 10240 kilobytes. Example: <code>/tmp/phpohBFoL</code></p>
         </div>
         </form>
 
@@ -5766,7 +5772,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"signed_by_name\": \"b\",
     \"signed_by_role\": \"n\",
     \"signature_data\": \"architecto\",
-    \"signed_at\": \"2026-01-09T09:54:48\"
+    \"signed_at\": \"2026-01-09T10:08:59\"
 }"
 </code></pre></div>
 
@@ -5785,7 +5791,7 @@ let body = {
     "signed_by_name": "b",
     "signed_by_role": "n",
     "signature_data": "architecto",
-    "signed_at": "2026-01-09T09:54:48"
+    "signed_at": "2026-01-09T10:08:59"
 };
 
 fetch(url, {
@@ -5926,10 +5932,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="signed_at"                data-endpoint="POSTapi-v1-work-orders--workOrderId--report-signature"
-               value="2026-01-09T09:54:48"
+               value="2026-01-09T10:08:59"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-01-09T09:54:48</code></p>
+<p>Must be a valid date. Example: <code>2026-01-09T10:08:59</code></p>
         </div>
         </form>
 
@@ -6053,6 +6059,290 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="url">
     <br>
 <p>Example: <code>architecto</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="endpoints-GETapi-v1-reports--id--pdf">GET api/v1/reports/{id}/pdf</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-reports--id--pdf">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/reports/architecto/pdf" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/reports/architecto/pdf"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-reports--id--pdf">
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+x-trace-id: 3bd08213-cac6-406d-82de-0f32ed524f8a
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Error interno.&quot;,
+    &quot;errors&quot;: {},
+    &quot;trace_id&quot;: &quot;3bd08213-cac6-406d-82de-0f32ed524f8a&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-reports--id--pdf" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-reports--id--pdf"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-reports--id--pdf"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-reports--id--pdf" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-reports--id--pdf">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-reports--id--pdf" data-method="GET"
+      data-path="api/v1/reports/{id}/pdf"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-reports--id--pdf', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-reports--id--pdf"
+                    onclick="tryItOut('GETapi-v1-reports--id--pdf');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-reports--id--pdf"
+                    onclick="cancelTryOut('GETapi-v1-reports--id--pdf');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-reports--id--pdf"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/reports/{id}/pdf</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-reports--id--pdf"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-reports--id--pdf"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="GETapi-v1-reports--id--pdf"
+               value="architecto"
+               data-component="url">
+    <br>
+<p>The ID of the report. Example: <code>architecto</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="endpoints-GETapi-v1-reports--id--certificate">GET api/v1/reports/{id}/certificate</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-reports--id--certificate">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/reports/architecto/certificate" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/reports/architecto/certificate"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-reports--id--certificate">
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+x-trace-id: b07f6d95-5c5e-4e45-8dfe-d7da357753a2
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Error interno.&quot;,
+    &quot;errors&quot;: {},
+    &quot;trace_id&quot;: &quot;b07f6d95-5c5e-4e45-8dfe-d7da357753a2&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-reports--id--certificate" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-reports--id--certificate"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-reports--id--certificate"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-reports--id--certificate" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-reports--id--certificate">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-reports--id--certificate" data-method="GET"
+      data-path="api/v1/reports/{id}/certificate"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-reports--id--certificate', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-reports--id--certificate"
+                    onclick="tryItOut('GETapi-v1-reports--id--certificate');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-reports--id--certificate"
+                    onclick="cancelTryOut('GETapi-v1-reports--id--certificate');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-reports--id--certificate"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/reports/{id}/certificate</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-reports--id--certificate"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-reports--id--certificate"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="GETapi-v1-reports--id--certificate"
+               value="architecto"
+               data-component="url">
+    <br>
+<p>The ID of the report. Example: <code>architecto</code></p>
             </div>
                     </form>
 

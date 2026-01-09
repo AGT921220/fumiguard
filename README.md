@@ -66,6 +66,17 @@ cd backend
 php artisan scribe:generate
 ```
 
+### PDFs (ServiceReport)
+
+Al finalizar un ServiceReport se generan:
+
+- **Reporte de servicio (PDF)**: `GET /api/v1/reports/{id}/pdf`
+- **Certificado de fumigación (PDF, folio por tenant)**: `GET /api/v1/reports/{id}/certificate`
+
+Notas:
+- Los PDFs se almacenan en `backend/storage/app/private/reports/<tenant>/<report>/...`
+- La generación usa **Dompdf**.
+
 ### Datos demo (seed)
 
 Al correr `php artisan migrate --seed` se crea:

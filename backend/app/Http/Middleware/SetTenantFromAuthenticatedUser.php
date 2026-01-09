@@ -3,7 +3,9 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use App\Application\Auth\UserContext;
 use App\Application\Tenancy\TenantContext;
+use App\Domain\Enums\UserRole;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -22,6 +24,12 @@ class SetTenantFromAuthenticatedUser
             /** @var TenantContext $tenantContext */
             $tenantContext = app(TenantContext::class);
             $tenantContext->setTenantId((int) $user->tenant_id);
+
+            if (isset($user->id, $user->role)) {
+                /** @var UserContext $userContext */
+                $userContext = app(UserContext::class);
+                $userContext->set((int) $user->id, UserRole::from((string) $user->role));
+            }
         }
 
         return $next($request);

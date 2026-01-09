@@ -2,14 +2,20 @@
 
 namespace App\Application\UseCases\WorkOrders;
 
+use App\Application\Auth\UserContext;
 use App\Application\Ports\WorkOrderRepository;
+use App\Domain\Enums\UserRole;
 use Carbon\CarbonImmutable;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 final readonly class CheckInUseCase
 {
-    public function __construct(private WorkOrderRepository $workOrders)
+    public function __construct(
+        private WorkOrderRepository $workOrders,
+        private UserContext $userContext,
+    )
     {
     }
 
@@ -20,6 +26,8 @@ final readonly class CheckInUseCase
         if ($wo === null) {
             throw new NotFoundHttpException('WorkOrder no encontrado.');
         }
+
+        $this->authorizeEdit($wo);
 
         if ($wo['check_in_at'] !== null) {
             throw new BadRequestHttpException('WorkOrder ya tiene check-in.');
@@ -39,6 +47,22 @@ final readonly class CheckInUseCase
         }
 
         return $updated;
+    }
+
+    private function authorizeEdit(array $workOrder): void
+    {
+        $role = $this->userContext->requireRole();
+
+        if ($role === UserRole::CLIENT_VIEWER) {
+            throw new AccessDeniedHttpException('Solo lectura.');
+        }
+
+        if ($role === UserRole::TECHNICIAN) {
+            $assigned = $workOrder['assigned_user_id'] ?? null;
+            if ($assigned === null || (int) $assigned !== $this->userContext->requireUserId()) {
+                throw new AccessDeniedHttpException('No autorizado.');
+            }
+        }
     }
 }
 

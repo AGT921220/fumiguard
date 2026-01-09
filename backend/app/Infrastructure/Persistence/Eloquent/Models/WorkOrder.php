@@ -14,6 +14,7 @@ class WorkOrder extends Model
     protected $fillable = [
         'tenant_id',
         'appointment_id',
+        'assigned_user_id',
         'status',
         'check_in_at',
         'check_in_lat',

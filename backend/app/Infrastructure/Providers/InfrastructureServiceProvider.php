@@ -4,11 +4,15 @@ namespace App\Infrastructure\Providers;
 
 use App\Application\Ports\AuthTokenService;
 use App\Application\Ports\AppointmentRepository;
+use App\Application\Ports\CertificateFolioGenerator;
 use App\Application\Ports\CustomerRepository;
 use App\Application\Ports\ChemicalUsageRepository;
+use App\Application\Ports\DocumentStorage;
 use App\Application\Ports\EvidenceRepository;
 use App\Application\Ports\EvidenceStorage;
+use App\Application\Ports\PublicFileDataUriProvider;
 use App\Application\Ports\RecurrenceRuleRepository;
+use App\Application\Ports\ReportPdfGenerator;
 use App\Application\Ports\ServiceReportRepository;
 use App\Application\Ports\ServicePlanRepository;
 use App\Application\Ports\SignatureRepository;
@@ -17,6 +21,8 @@ use App\Application\Ports\TenantRepository;
 use App\Application\Ports\UserRepository;
 use App\Infrastructure\Auth\SanctumAuthTokenService;
 use App\Application\Ports\WorkOrderRepository;
+use App\Infrastructure\Documents\DompdfReportPdfGenerator;
+use App\Infrastructure\Documents\LocalDocumentStorage;
 use App\Infrastructure\Persistence\Eloquent\Repositories\EloquentAppointmentRepository;
 use App\Infrastructure\Persistence\Eloquent\Repositories\EloquentChemicalUsageRepository;
 use App\Infrastructure\Persistence\Eloquent\Repositories\EloquentCustomerRepository;
@@ -29,7 +35,9 @@ use App\Infrastructure\Persistence\Eloquent\Repositories\EloquentSiteRepository;
 use App\Infrastructure\Persistence\Eloquent\Repositories\EloquentTenantRepository;
 use App\Infrastructure\Persistence\Eloquent\Repositories\EloquentUserRepository;
 use App\Infrastructure\Persistence\Eloquent\Repositories\EloquentWorkOrderRepository;
+use App\Infrastructure\Storage\PublicDiskDataUriProvider;
 use App\Infrastructure\Storage\PublicEvidenceStorage;
+use App\Infrastructure\Tenancy\DbCertificateFolioGenerator;
 use Illuminate\Support\ServiceProvider;
 
 final class InfrastructureServiceProvider extends ServiceProvider
@@ -52,6 +60,11 @@ final class InfrastructureServiceProvider extends ServiceProvider
         $this->app->bind(ChemicalUsageRepository::class, EloquentChemicalUsageRepository::class);
         $this->app->bind(SignatureRepository::class, EloquentSignatureRepository::class);
         $this->app->bind(EvidenceStorage::class, PublicEvidenceStorage::class);
+
+        $this->app->bind(PublicFileDataUriProvider::class, PublicDiskDataUriProvider::class);
+        $this->app->bind(CertificateFolioGenerator::class, DbCertificateFolioGenerator::class);
+        $this->app->bind(ReportPdfGenerator::class, DompdfReportPdfGenerator::class);
+        $this->app->bind(DocumentStorage::class, LocalDocumentStorage::class);
     }
 }
 

@@ -33,6 +33,16 @@ final class EloquentServiceReportRepository extends TenantScopedRepository imple
         return $r ? $this->toArray($r) : null;
     }
 
+    public function getById(int $id): ?array
+    {
+        $r = ServiceReport::query()
+            ->where('tenant_id', $this->tenantId())
+            ->whereKey($id)
+            ->first();
+
+        return $r ? $this->toArray($r) : null;
+    }
+
     public function update(int $id, array $data): ?array
     {
         $r = ServiceReport::query()
@@ -59,6 +69,9 @@ final class EloquentServiceReportRepository extends TenantScopedRepository imple
             'locked' => (bool) $r->locked,
             'started_at' => $r->started_at->toISOString(),
             'finalized_at' => $r->finalized_at?->toISOString(),
+            'certificate_folio' => $r->certificate_folio !== null ? (string) $r->certificate_folio : null,
+            'report_pdf_path' => $r->report_pdf_path !== null ? (string) $r->report_pdf_path : null,
+            'certificate_pdf_path' => $r->certificate_pdf_path !== null ? (string) $r->certificate_pdf_path : null,
             'checklist' => $r->checklist,
             'notes' => $r->notes !== null ? (string) $r->notes : null,
         ];

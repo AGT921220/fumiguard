@@ -14,12 +14,15 @@ class ServiceReport extends Model
     protected $fillable = [
         'tenant_id',
         'work_order_id',
+        'certificate_folio',
         'status',
         'locked',
         'started_at',
         'finalized_at',
         'checklist',
         'notes',
+        'report_pdf_path',
+        'certificate_pdf_path',
     ];
 
     protected function casts(): array

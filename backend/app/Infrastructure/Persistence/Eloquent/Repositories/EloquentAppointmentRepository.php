@@ -36,6 +36,27 @@ final class EloquentAppointmentRepository extends TenantScopedRepository impleme
         return $a ? $this->toArray($a) : null;
     }
 
+    public function update(int $id, array $data): ?array
+    {
+        $a = Appointment::query()
+            ->where('tenant_id', $this->tenantId())
+            ->whereKey($id)
+            ->first();
+
+        if (! $a) {
+            return null;
+        }
+
+        if (isset($data['scheduled_at'])) {
+            $data['scheduled_at'] = CarbonImmutable::parse((string) $data['scheduled_at'])->toDateTimeString();
+        }
+
+        $a->fill($data);
+        $a->save();
+
+        return $this->toArray($a);
+    }
+
     public function listBetween(string $startIso, string $endIso): array
     {
         return Appointment::query()

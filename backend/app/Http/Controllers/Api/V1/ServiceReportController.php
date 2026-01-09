@@ -9,6 +9,7 @@ use App\Application\UseCases\ServiceReports\SaveChecklistAndNotesUseCase;
 use App\Application\UseCases\ServiceReports\StartReportUseCase;
 use App\Application\UseCases\ServiceReports\UploadEvidenceUseCase;
 use App\Http\Controllers\Controller;
+use App\Jobs\GenerateReportDocumentsJob;
 use Illuminate\Http\Request;
 
 class ServiceReportController extends Controller
@@ -70,6 +71,11 @@ class ServiceReportController extends Controller
 
     public function finalize(int $workOrderId, FinalizeReportUseCase $useCase)
     {
-        return response()->json($useCase->execute($workOrderId));
+        $report = $useCase->execute($workOrderId);
+
+        // En testing: queue=sync => se ejecuta inmediatamente.
+        GenerateReportDocumentsJob::dispatch((int) $report['id']);
+
+        return response()->json($report);
     }
 }

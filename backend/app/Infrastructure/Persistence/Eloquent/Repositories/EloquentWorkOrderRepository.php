@@ -7,11 +7,12 @@ use App\Infrastructure\Persistence\Eloquent\Models\WorkOrder;
 
 final class EloquentWorkOrderRepository extends TenantScopedRepository implements WorkOrderRepository
 {
-    public function createFromAppointment(int $appointmentId): array
+    public function createFromAppointment(int $appointmentId, ?int $assignedUserId = null): array
     {
         $wo = WorkOrder::query()->create([
             'tenant_id' => $this->tenantId(),
             'appointment_id' => $appointmentId,
+            'assigned_user_id' => $assignedUserId,
             'status' => 'OPEN',
         ]);
 
@@ -60,6 +61,7 @@ final class EloquentWorkOrderRepository extends TenantScopedRepository implement
         return [
             'id' => (int) $wo->id,
             'appointment_id' => (int) $wo->appointment_id,
+            'assigned_user_id' => $wo->assigned_user_id !== null ? (int) $wo->assigned_user_id : null,
             'status' => (string) $wo->status,
             'check_in_at' => $wo->check_in_at?->toISOString(),
             'check_out_at' => $wo->check_out_at?->toISOString(),

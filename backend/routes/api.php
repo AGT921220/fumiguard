@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\TenantController;
 use App\Http\Controllers\Api\V1\CustomerController;
+use App\Http\Controllers\Api\V1\ReportDocumentController;
 use App\Http\Controllers\Api\V1\SchedulingController;
 use App\Http\Controllers\Api\V1\ServicePlanController;
 use App\Http\Controllers\Api\V1\ServiceReportController;
@@ -69,6 +70,10 @@ Route::prefix('v1')->group(function () {
         Route::post('/work-orders/{workOrderId}/report/evidence', [ServiceReportController::class, 'uploadEvidence']);
         Route::post('/work-orders/{workOrderId}/report/signature', [ServiceReportController::class, 'captureSignature']);
         Route::post('/work-orders/{workOrderId}/report/finalize', [ServiceReportController::class, 'finalize']);
+
+        // Report documents (PDF)
+        Route::get('/reports/{id}/pdf', [ReportDocumentController::class, 'serviceReport']);
+        Route::get('/reports/{id}/certificate', [ReportDocumentController::class, 'certificate']);
     });
 });
 

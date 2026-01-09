@@ -2,7 +2,10 @@
 
 namespace App\Application\UseCases\WorkOrders;
 
+use App\Application\Auth\UserContext;
 use App\Application\Ports\WorkOrderRepository;
+use App\Domain\Enums\UserRole;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -10,7 +13,10 @@ final readonly class UpdateStatusUseCase
 {
     private const ALLOWED = ['OPEN', 'IN_PROGRESS', 'COMPLETED', 'CANCELLED'];
 
-    public function __construct(private WorkOrderRepository $workOrders)
+    public function __construct(
+        private WorkOrderRepository $workOrders,
+        private UserContext $userContext,
+    )
     {
     }
 
@@ -20,6 +26,13 @@ final readonly class UpdateStatusUseCase
             throw new BadRequestHttpException('Estado inválido.');
         }
 
+        $wo = $this->workOrders->get($workOrderId);
+        if ($wo === null) {
+            throw new NotFoundHttpException('WorkOrder no encontrado.');
+        }
+
+        $this->authorizeEdit($wo);
+
         $updated = $this->workOrders->update($workOrderId, ['status' => $status]);
 
         if ($updated === null) {
@@ -27,6 +40,22 @@ final readonly class UpdateStatusUseCase
         }
 
         return $updated;
+    }
+
+    private function authorizeEdit(array $workOrder): void
+    {
+        $role = $this->userContext->requireRole();
+
+        if ($role === UserRole::CLIENT_VIEWER) {
+            throw new AccessDeniedHttpException('Solo lectura.');
+        }
+
+        if ($role === UserRole::TECHNICIAN) {
+            $assigned = $workOrder['assigned_user_id'] ?? null;
+            if ($assigned === null || (int) $assigned !== $this->userContext->requireUserId()) {
+                throw new AccessDeniedHttpException('No autorizado.');
+            }
+        }
     }
 }
 
